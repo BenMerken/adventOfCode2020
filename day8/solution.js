@@ -18,17 +18,9 @@ const solution1 = () => {
     const instruction = instructions[nextInstructionIndex];
     const [operation, argument] = instruction.split(' ');
 
-    switch (operation) {
-      case 'acc':
-        acc += +argument;
-        nextInstructionIndex += 1;
-        break;
-      case 'nop':
-        nextInstructionIndex += 1;
-        break;
-      case 'jmp':
-        nextInstructionIndex += +argument;
-    }
+    operation === 'acc' && (acc += +argument) && (nextInstructionIndex += 1);
+    operation === 'jmp' && (nextInstructionIndex += +argument);
+    operation === 'nop' && (nextInstructionIndex += 1);
   }
 
   console.log('Solution 1, ', acc);
