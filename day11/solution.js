@@ -45,7 +45,7 @@ const solution1 = () => {
   let seatsMap = seats.map(seatsRow => seatsRow.map(seat => seat));
   let oldSeatsMap = seatsMap.map(seatsRow => seatsRow.map(seat => seat));
   while (
-    (seatsMap = getNewSeatMap(seatsMap.map(seatsRow => seatsRow.map(seat => seat))))
+    (seatsMap = getNewSeatMap(seatsMap))
       .map((seatsRow) => seatsRow.join(''))
       .join('') !== oldSeatsMap.map((seatsRow) => seatsRow.join('')).join('')
   ) {
